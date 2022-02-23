@@ -53,11 +53,12 @@ public class CharacterController : MonoBehaviour
     private void Move()
     {
         Vector3 moveDirection = new Vector3(inputVector.x, 0.0f, inputVector.y);
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, moveDirection, 4.0f * Time.deltaTime, 0.0f);
+
         moveDirection *= walkSpeed;
         if (rigidbody.velocity.magnitude < maxSpeed)
             rigidbody.AddForce(moveDirection);
 
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, moveDirection, 4.0f * Time.deltaTime, 0.0f);
 
         // Draw a ray pointing at our target in
         Debug.DrawRay(transform.position, newDirection, Color.red);
