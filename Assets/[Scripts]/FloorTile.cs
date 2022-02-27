@@ -12,11 +12,14 @@ public class FloorTile : MonoBehaviour
     Rigidbody rigidbody;
 
     bool isTouching;
+
+    
     // Start is called before the first frame update
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
         platformLife = timeBeforeFall;
+        transform.localScale = new Vector3(transform.localScale.x, Random.Range(1.0f, 2.0f), transform.localScale.z);
     }
 
     // Update is called once per frame
