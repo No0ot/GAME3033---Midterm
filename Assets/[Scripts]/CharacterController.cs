@@ -40,7 +40,7 @@ public class CharacterController : MonoBehaviour
         respawnLocation = transform.position;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
          Move();
     }
