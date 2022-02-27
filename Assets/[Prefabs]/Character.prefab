@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1614703985089962821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.57, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1288642767594435149}
   m_Father: {fileID: 0}
@@ -107,10 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3936c2e4708594db00f219f06c02ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 10
-  maxSpeed: 6
-  jumpForce: 10
+  currentActivePlatform: {fileID: 0}
+  walkSpeed: 12
+  maxSpeed: 8
+  jumpForce: 8
   isGrounded: 0
+  handSocket: {fileID: 0}
 --- !u!1001 &1614703986461037990
 PrefabInstance:
   m_ObjectHideFlags: 0

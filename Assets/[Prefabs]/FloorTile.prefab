@@ -125,5 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8690e41d784db234d830c7037701c4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeFall: 0.5
+  timeBeforeFall: 0.15
   platformLife: 0
+  materials:
+  - {fileID: 2100000, guid: 1a506b06fef2fed49b8956d2a5104a1e, type: 2}
+  - {fileID: 2100000, guid: e83b9ada2fa7b144bb417d9f94e79ff4, type: 2}
+  - {fileID: 2100000, guid: 908ed0e68dd8fb8478ec5a51cb24d604, type: 2}
+  - {fileID: 2100000, guid: 749de5676e33230408c2fd845cd5f301, type: 2}

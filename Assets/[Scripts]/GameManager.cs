@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         timer = timerMax;
+        Time.timeScale = 1f;
     }
 
     private void Start()
@@ -46,6 +47,11 @@ public class GameManager : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+        else
+        {
+            EndGame();
+            timer = 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -58,5 +64,25 @@ public class GameManager : MonoBehaviour
         {
             other.GetComponent<CharacterController>().Respawn();
         }
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        UIController.Instance.pauseMenu.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        UIController.Instance.pauseMenu.SetActive(false);
+
+    }
+
+    public void EndGame()
+    {
+        Time.timeScale = 0f;
+        UIController.Instance.endMenu.SetActive(true);
+        UIController.Instance.UpdateFinalScore();
     }
 }

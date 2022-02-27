@@ -54,6 +54,7 @@ public class CharacterController : MonoBehaviour
     {
         if (isGrounded)
         {
+            SoundManager.Instance.PlayJump();
             isGrounded = false;
             rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             animator.SetBool(groundedHash, false);
@@ -69,6 +70,8 @@ public class CharacterController : MonoBehaviour
             heldObject.transform.parent = handSocket.transform;
             heldObject.transform.position = handSocket.transform.position;
             animator.SetBool(carryingHash, true);
+            SoundManager.Instance.PlayPickup();
+
         }
         else if(heldObject)
         {
@@ -84,8 +87,14 @@ public class CharacterController : MonoBehaviour
                 animator.SetBool(carryingHash, false);
                 heldObject = null;
                 inRangePickup = null;
+                SoundManager.Instance.PlayDrop();
             }
         }
+    }
+
+    public void OnPause(InputValue value)
+    {
+        GameManager.Instance.PauseGame();
     }
 
     private void Move()
